@@ -1,0 +1,40 @@
+ServiceName = "koalaops-sandbox"
+Name = "koalaops-sandbox"
+Description = "A sandbox project to try out KoalaOps 🐨"
+Owners = ["bkhablenko@gmail.com"]
+ServerFramework = "java-quarkus"
+ServerMain = ""
+ArtifactRepository = "europe-central2-docker.pkg.dev/sandbox-397113/sandbox"
+Domain = ""
+Port = 8080
+
+[Repo]
+  Name = "koalaops-sandbox"
+  GitUser = "bkhablenko"
+  URL = "https://github.com/bkhablenko/koalaops-sandbox"
+  Token = ""
+
+[OpenAPIConfig]
+  SpecPath = ""
+  CodegenTool = ""
+
+[[Environments]]
+  Name = "koalaops-sandbox"
+  Namespace = "koalaops-sandbox"
+  Cluster = "sandbox"
+  IngressEnabled = false
+  IngressHost = ""
+  [Environments.EnvDeploymentConfig]
+    AutoDeploy = true
+
+[SSLConfig]
+  CertName = ""
+  Issuer = ""
+  IssuerContactEmail = ""
+
+[Tracing]
+  Backend = ""
+  URL = ""
+
+[Profiling]
+  Tool = ""

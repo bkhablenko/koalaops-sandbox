@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: koalaops-sandbox
+  labels:
+    app: koalaops-sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: koalaops-sandbox
+  template:
+    spec:
+      containers:
+      - name: koalaops-sandbox
+        image: europe-central2-docker.pkg.dev/sandbox-397113/sandbox/koalaops-sandbox:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+          limits:
+            cpu: 500m
+            memory: 500Mi
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: koalaops-sandbox-configmap
+    metadata:
+      labels:
+        app: koalaops-sandbox

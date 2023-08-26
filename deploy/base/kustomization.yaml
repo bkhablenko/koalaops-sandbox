@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonLabels:
+  app: koalaops-sandbox
+configMapGenerator:
+- envs:
+  - .env
+  name: koalaops-sandbox-configmap
+generatorOptions:
+  disableNameSuffixHash: true
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml
