@@ -23,9 +23,9 @@ Port = 8080
   Namespace = "koalaops-sandbox"
   Cluster = "sandbox"
   IngressEnabled = false
-  IngressHost = ""
+  IngressHost = "koalaops-sandbox.koalaops-sandbox.sandbox."
   [Environments.EnvDeploymentConfig]
-    AutoDeploy = true
+    AutoDeploy = false
 
 [SSLConfig]
   CertName = ""
